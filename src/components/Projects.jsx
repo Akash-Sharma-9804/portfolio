@@ -72,7 +72,7 @@ const Projects = () => {
                   </span>
                   {/* <Link to={items.link}> View Live Page</Link> */}
                   <a
-                    className="p-2 text-center  bg-slate-600 rounded-md font-bold"
+                    className="p-2 text-center   hover:text-green-600 bg-slate-600 rounded-md font-bold"
                     href={items.link} target="_blank"
                     rel="noopener noreferrer">
                       
@@ -92,12 +92,20 @@ const Projects = () => {
         <h1 className="text-xl font-bold text-slate-100">
           Visit My Page :{" "}
         </h1>
+        <div className="relative group">
+
         <img
-          className="h-10 w*10 hover:scale-110 cursor-pointer"
+          className="h-10 w-10 hover:scale-110 cursor-pointer"
           src="./images/github.png"
           alt=""
           onClick={openGithub}
-        />
+          />
+        <div
+        className="absolute -top-10   p-2 w-full bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+        <p className="text-white text-xs   font-semibold">github.com/Akash-Sharma-9804</p>
+      </div>
+        </div>
       </motion.div>
       <motion.hr
         whileInView={{ opacity: 1, y: 0 }}
