@@ -68,7 +68,7 @@ const About = () => {
          whileInView={{opacity:1,x:0}}
          initial={{opacity:0,x:100}}
          transition={{duration:1}}
-        className="right w-4/5 row-start-1 flex flex-col ml-5 sm:ml-0 gap-10">
+        className="right w-4/5 row-start-1 flex flex-col ml-7 sm:ml-0 gap-10">
           <p className="text-wrap text-justify text-white">
             {" "}
             Enthusiastic and motivated Web Developer with a foundational
