@@ -47,7 +47,7 @@ const Contact = () => {
 
   return (
     <div
-      className=" bg-[url('./images/bg.jpg')] bg-cover bg-center   bg-repeat sm:h-screen  max-w-screen-2xl flex items-center justify-center"
+      className="bg-cover bg-center   bg-repeat sm:h-screen  max-w-screen-2xl flex items-center justify-center"
       id="contact">
       <div className="backdrop-blur-3xl	mt-20 sm:mt-20 mb-5 rounded-lg shadow-lg w-4/5 md:w-2/3 lg:w-11/12   sm:flex">
         {/* Left Section */}
