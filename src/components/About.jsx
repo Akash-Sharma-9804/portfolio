@@ -51,17 +51,17 @@ const About = () => {
                 variants={iconvariation(3)}
                 initial= "initial"
                 animate="animate"
-                className="h-8 w-8 hover:scale-105 cursor-pointer " src="../images/instagram.png" alt="" />
+                className="h-8 w-8 hover:scale-105 cursor-pointer " src="./images/instagram.png" alt="" />
                 <motion.img  variants={iconvariation(5)}
                 initial= "initial"
                 animate="animate"
-                 className="h-8 w-8 hover:scale-125 cursor-pointer " src="../images/facebook.png" alt="" />
+                 className="h-8 w-8 hover:scale-125 cursor-pointer " src="./images/facebook.png" alt="" />
                 <motion.img  variants={iconvariation(3)}
                 initial= "initial"
-                animate="animate" className="h-8 w-8 hover:scale-105 cursor-pointer " src="../images/gmail.png" alt="" />
+                animate="animate" className="h-8 w-8 hover:scale-105 cursor-pointer " src="./images/gmail.png" alt="" />
                 <motion.img  variants={iconvariation(5)}
                 initial= "initial"
-                animate="animate" className="h-8 w-8 hover:scale-105 cursor-pointer " src="../images/whatsapp.png" alt="" />
+                animate="animate" className="h-8 w-8 hover:scale-105 cursor-pointer " src="./images/whatsapp.png" alt="" />
           </div>
         </motion.div>
         <motion.div 
