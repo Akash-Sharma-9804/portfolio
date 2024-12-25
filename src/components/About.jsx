@@ -71,24 +71,21 @@ const About = () => {
         className="right w-4/5 row-start-1 flex flex-col ml-7 sm:ml-0 gap-10">
           <p className="text-wrap text-justify text-white">
             {" "}
-            Enthusiastic and motivated Web Developer with a foundational
-            understanding of web technologies. Adapt at learning new
-            technologies quickly and eager to contribute fresh ideas to
-            innovative web development teams. I am a skilled web
-            developer with expertise in a wide range of technologies, including
-            HTML, CSS, and JavaScript, which form the foundation of their
-            exceptional frontend development skills. Proficient in modern
-            frameworks like React, Tailwind-css, Express. I crafts dynamic and user-friendly
-            interfaces, ensuring seamless user experiences. Their backend
-            capabilities are equally impressive, with strong knowledge of
-            Node.js and MongoDB for creating robust and scalable server-side
-            solutions. I am a well-versed in version control using Git,
-            enabling efficient collaboration and code management. With a knack
-            for problem-solving and a creative approach to frontend design, they
-            excel at turning complex ideas into functional and visually
-            appealing web applications. Additionally, their Python programming
-            skills further enhance their versatility as a developer, allowing
-            them to tackle diverse challenges across the development stack.
+            Passionate and driven, I am a Web Developer skilled in crafting dynamic, user-friendly
+websites and applications. With a strong foundation in HTML, CSS, and JavaScript, I
+specialize in building intuitive, user-focused interfaces. My prociency with modern tools
+like React, Tailwind CSS, and Express empowers me to create visually stunning and
+highly interactive frontends that captivate users.
+On the backend, I excel in developing scalable and secure solutions using Node.js and
+MongoDB, ensuring robust performance for web applications. Skilled in Git for seamless
+collaboration and Python for versatile problem-solving, I blend functionality with design
+to craft intuitive, impactful web experiences.
+Inspired by minimalist yet innovative approaches, I aim to blend functionality with design
+and trends to deliver intuitive user experiences. Whether crafting dynamic applications or
+collaborating on impactful projects, I strive to create digital experiences that resonate and
+leave a lasting impact.
+Ready to turn your Vision into Reality? Let's collaborate to create a website that's not
+only functional but also engaging and user-friendly!
           </p>
           <div>
             <motion.ul  whileInView={{opacity:1,y:0}}
