@@ -19,8 +19,16 @@ const project = [
     link: "https://gorgeous-pithivier-3060a5.netlify.app",
     desc: "A full MERN-stack Project. Created a Fiverr-Clone using  HTML, CSS , React,Node JS & Mongo DB for the front-end and backends..",
   },
-  {
+   {
     id: "3",
+    title: "SwiftCart",
+    img: "./images/SwiftCart.png",
+    skill: " HTML, CSS , React",
+    link: "https://swift-cart-flax.vercel.app/",
+    desc: " Developed a E-commerse website with react and tailwind and used FakeStoreApi for database for products.",
+  },
+  {
+    id: "4",
     title: "Zomato-UI",
     img: "./images/Zomato.png",
     skill: " HTML, CSS , React",
@@ -28,7 +36,7 @@ const project = [
     desc: "A full working Zomato UI clone. It includes features like a responsive homepage showcasing restaurants, restaurant details pages, dynamic filters. Built with React for the frontend.",
   },
   {
-    id: "4",
+    id: "5",
     title: "Weather-App",
     img: "./images/Wetherapp.png",
     skill: " JavaScript, HTML, and CSS",
