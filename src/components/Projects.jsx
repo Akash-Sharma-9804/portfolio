@@ -29,6 +29,14 @@ const project = [
   },
   {
     id: "4",
+    title: "Quantum-Ai",
+    img: "./images/Quantum-ai.png",
+    skill: "React, Tailwind css, Gemini Ai api",
+    link: "https://quantum-ai-weld.vercel.app/",
+    desc: " Developed a Chat-bot Ai using React, Tailwind css and Integrated Gemini Ai api   for real-time Ai response",
+  },
+  {
+    id: "5",
     title: "Zomato-UI",
     img: "./images/Zomato.png",
     skill: " HTML, CSS , React",
@@ -36,7 +44,7 @@ const project = [
     desc: "A full working Zomato UI clone. It includes features like a responsive homepage showcasing restaurants, restaurant details pages, dynamic filters. Built with React for the frontend.",
   },
   {
-    id: "5",
+    id: "6",
     title: "Weather-App",
     img: "./images/Wetherapp.png",
     skill: " JavaScript, HTML, and CSS",
