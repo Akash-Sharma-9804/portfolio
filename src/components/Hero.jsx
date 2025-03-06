@@ -32,13 +32,13 @@ const Hero = () => {
         initial={{opacity:0,x:100}}
         transition={{duration:1.5}} className="text-4xl flex  flex-wrap gap-2 text-white justify-center  ">
               {" "}
-              Hii I'am{" "}
+              Hii I'm{" "}
               <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">
                 {" "}
                 Akash Sharma
               </span>{" "}
             </motion.h1>
-            <h1 className="text-3xl text-white font-semibold">I'am a</h1>
+            <h1 className="text-3xl text-white font-semibold">I'm a</h1>
             <div>
               <TypeAnimation
                 className="text-3xl bg-gradient-to-r from-zinc-500 to-sky-700 bg-clip-text text-transparent font-bold "
