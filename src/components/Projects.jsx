@@ -30,7 +30,7 @@ const project = [
   {
     id: "4",
     title: "Quantum-Ai",
-    img: "./images/Quantum-ai.png",
+    img: "./images/Quantum.png",
     skill: "React, Tailwind css, Gemini Ai api",
     link: "https://quantum-ai-weld.vercel.app/",
     desc: " Developed a Chat-bot Ai using React, Tailwind css and Integrated Gemini Ai api   for real-time Ai response",
