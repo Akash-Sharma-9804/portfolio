@@ -17,12 +17,12 @@ const iconvariation= (duration)=>({
 });
 const cvDownload = () => {
   // Path to my CV file
-  const cvUrl = './cv/Resume of Akash.pdf';
+  const cvUrl = './cv/Resume of Akash Sharma.pdf';
 
 
   const link = document.createElement('a');
   link.href = cvUrl;
-  link.download = 'Resume of Akash.pdf'; 
+  link.download = 'Resume of Akash Sharma.pdf'; 
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
