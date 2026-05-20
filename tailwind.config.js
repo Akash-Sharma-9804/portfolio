@@ -4,37 +4,102 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        background: '#131313',
+        surface: {
+          DEFAULT: '#131313',
+          dim: '#131313',
+          bright: '#393939',
+          lowest: '#0e0e0e',
+          low: '#1c1b1b',
+          container: '#20201f',
+          high: '#2a2a2a',
+          highest: '#353535',
+          variant: '#353535',
+        },
+        primary: {
+          DEFAULT: '#e7cabc',
+          container: '#caafa1',
+          fixed: '#faddce',
+          'fixed-dim': '#ddc1b2',
+        },
+        'on-primary': '#3e2d23',
+        'on-primary-container': '#554237',
+        'on-primary-fixed': '#27180f',
+        'on-primary-fixed-variant': '#564338',
+        secondary: {
+          DEFAULT: '#c6c6c7',
+          container: '#454747',
+          fixed: '#e2e2e2',
+          'fixed-dim': '#c6c6c7',
+        },
+        'on-secondary': '#2f3131',
+        'on-secondary-container': '#b4b5b5',
+        'on-secondary-fixed': '#1a1c1c',
+        'on-secondary-fixed-variant': '#454747',
+        tertiary: {
+          DEFAULT: '#c3d3d7',
+          container: '#a8b7bb',
+          fixed: '#d6e5e9',
+          'fixed-dim': '#bac9cd',
+        },
+        'on-tertiary': '#253336',
+        'on-tertiary-container': '#3a484c',
+        'on-tertiary-fixed': '#101e21',
+        'on-tertiary-fixed-variant': '#3b494d',
+        'on-surface': '#e5e2e1',
+        'on-surface-variant': '#d2c4bd',
+        'inverse-surface': '#e5e2e1',
+        'inverse-on-surface': '#313030',
+        'inverse-primary': '#6f5a4e',
+        outline: {
+          DEFAULT: '#9b8e88',
+          variant: '#4f4540',
+        },
+        error: {
+          DEFAULT: '#ffb4ab',
+          container: '#93000a',
+        },
+        'on-error': '#690005',
+        'on-error-container': '#ffdad6',
+        beige: '#CAAFA1',
+      },
+      fontFamily: {
+        display: ['"Bodoni Moda"', 'serif'],
+        body: ['Geist', 'system-ui', 'sans-serif'],
+        code: ['Geist', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['72px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '600' }],
+        'headline-lg': ['48px', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '500' }],
+        'headline-lg-mobile': ['32px', { lineHeight: '1.2', fontWeight: '500' }],
+        'headline-md': ['24px', { lineHeight: '1.3', fontWeight: '500' }],
+        'body-lg': ['18px', { lineHeight: '1.6', letterSpacing: '-0.01em', fontWeight: '400' }],
+        'body-md': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
+        'label-sm': ['12px', { lineHeight: '1', letterSpacing: '0.05em', fontWeight: '600' }],
+        'code': ['14px', { lineHeight: '1.5', fontWeight: '400' }],
+      },
+      spacing: {
+        'section-gap': '160px',
+        'margin-desktop': '80px',
+        'margin-mobile': '20px',
+        'gutter': '24px',
+        'unit': '4px',
+      },
+      maxWidth: {
+        'content': '1280px',
+      },
+      borderRadius: {
+        'sm': '0.125rem',
+        'DEFAULT': '0.25rem',
+        'md': '0.375rem',
+        'lg': '0.5rem',
+        'xl': '0.75rem',
+      },
+    },
   },
   plugins: [],
 }
-
-// const defaultTheme = require("tailwindcss/defaultTheme");
-
-// const colors = require("tailwindcss/colors");
-// const {
-//   default: flattenColorPalette,
-// } = require("tailwindcss/lib/util/flattenColorPalette");
-
-// /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   content: ["./src/**/*.{ts,tsx}"],
-//   darkMode: "class",
-//   theme: {
-//     // rest of the code
-//   },
-//   plugins: [addVariablesForColors],
-// };
-
-// function addVariablesForColors({
-//   addBase,
-//   theme
-// }) {
-//   let allColors = flattenColorPalette(theme("colors"));
-//   let newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]));
-
-//   addBase({
-//     ":root": newVars,
-//   });
-// }

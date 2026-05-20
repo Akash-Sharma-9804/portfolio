@@ -1,0 +1,185 @@
+/**
+ * config/data.js
+ * Central data store.
+ */
+
+export const navLinks = [
+  { label: 'About',      href: '#about'       },
+  { label: 'Education',  href: '#experience'  },
+  { label: 'Skills',     href: '#skills'      },
+  { label: 'Projects',   href: '#projects'    },
+  { label: 'Contact',    href: '#contact'     },
+]
+
+export const experiences = [
+  {
+    type: "work",
+    role: "Full-Stack Developer",
+    company: "QuantumHash Corporation",
+    duration: "April 2024 – Present",
+    description: "Built and deployed 4 full-stack production applications serving 1,000+ users. Developed 50+ RESTful API endpoints and optimized database performance.",
+    bullets: [
+      "Built and deployed 4 full-stack production applications serving 1,000+ users.",
+      "Developed 50+ RESTful API endpoints using Node.js and Express.js for scalable backend architecture.",
+      "Designed 40+ reusable React components improving frontend development speed by 30%.",
+      "Optimized MySQL queries and indexing strategies improving database performance by 35%.",
+      "Reduced average API response time from 800ms to under 450ms through backend restructuring.",
+      "Integrated LLM APIs and vector embeddings handling 10,000+ AI-driven requests.",
+    ],
+  },
+  {
+    type: "work",
+    role: "Web Designer",
+    company: "Hewlett-Packard HP",
+    duration: "2019 – 2020",
+    description: "Front-End Development using HTML, CSS, JavaScript. Created responsive and visually appealing web interfaces.",
+    bullets: [
+      "Built responsive landing pages and internal dashboards for HP enterprise clients.",
+      "Collaborated with UX teams to translate wireframes into pixel-perfect implementations.",
+    ],
+  },
+  {
+    type: "education",
+    role: "B.Sc Computer Science",
+    company: "Calcutta University",
+    duration: "2020 – 2023",
+    description: "Strong foundation in programming, algorithms, data structures, and software development principles.",
+    bullets: [
+      "Graduated with honors in core CS subjects including OS, DBMS, and Computer Networks.",
+      "Led a team project on distributed systems that received departmental recognition.",
+    ],
+  },
+  {
+    type: "work",
+    role: "Web Developer Intern",
+    company: "Unified Mentor",
+    duration: "2024",
+    description: "Frontend development internship focusing on React and modern JavaScript frameworks.",
+    bullets: [
+      "Developed interactive React components and integrated REST APIs for client projects.",
+      "Improved page load performance by 35% through code splitting and lazy loading.",
+    ],
+  },
+  {
+    type: "education",
+    role: "MERN Stack Development",
+    company: "Self-Learning",
+    duration: "2024",
+    description: "Full-stack mastery: MongoDB, Express.js, React, and Node.js for comprehensive application development.",
+    bullets: [
+      "Built 10+ production-grade full-stack projects including e-commerce and streaming platforms.",
+      "Mastered deployment pipelines with Docker, Vercel, and AWS S3 for CI/CD workflows.",
+    ],
+  },
+]
+
+export const skillCategories = [
+  {
+    title: 'Frontend Engineering',
+    category: 'Frontend',
+    version: 'v18.2+',
+    description: 'React.js, JavaScript ES6+, HTML5, CSS3, Tailwind CSS, Responsive Design, Component-Based Architecture.',
+    proficiency: 95,
+    icon: 'code',
+    techs: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind'],
+  },
+  {
+    title: 'Backend Systems',
+    category: 'Backend',
+    version: 'v20.x',
+    description: 'Node.js, Express.js, RESTful API design, authentication flows, and middleware architecture.',
+    proficiency: 92,
+    icon: 'server',
+    techs: ['Node.js', 'Express.js', 'REST API', 'Auth'],
+  },
+  {
+    title: 'Data Layer',
+    category: 'Database',
+    version: 'v6.x',
+    description: 'MySQL, MongoDB, Vector Databases. Query optimization, indexing, and data modeling.',
+    proficiency: 88,
+    icon: 'database',
+    techs: ['MySQL', 'MongoDB', 'Vector DB', 'Indexing'],
+  },
+  {
+    title: 'AI Integration',
+    category: 'Artificial Intelligence',
+    version: 'v1.x',
+    description: 'LLM APIs, Embeddings, Semantic Search, Deepgram STT/TTS for AI-driven applications.',
+    proficiency: 85,
+    icon: 'brain',
+    techs: ['LLM APIs', 'Embeddings', 'Semantic Search', 'Deepgram'],
+  },
+  {
+    title: 'DevOps & Tools',
+    category: 'Infrastructure',
+    version: 'v24.0',
+    description: 'Git, GitHub, PM2, VPS Deployment, Postman, Docker, CI/CD pipelines.',
+    proficiency: 82,
+    icon: 'wrench',
+    techs: ['Git', 'PM2', 'VPS', 'Postman', 'Docker'],
+  },
+]
+
+export const projects = [
+  {
+    id: "1",
+    title: "QhashAi",
+    img: "/images/Quantum.PNG",
+    category: "AI / Conversational Platform",
+    desc: "Full-stack conversational platform handling 5,000+ AI queries with semantic memory using vector embeddings for contextual accuracy.",
+    tech: ["React","Tailwind-Css", "Node.js","MySQL", "Deepgram","Vector DB", "LLM APIs"],
+    link: "https://qhashai.com",
+    github: "https://github.com/Akash-Sharma-9804",
+  },
+  {
+    id: "2",
+    title: "QuantumEdu",
+    img: "/images/quantumedu.PNG",
+    category: "AI / E-Learning Platform",
+    desc: "Full-stack AI-powered e-learning platform with intelligent tutoring, AI-generated explanations, doubt solving, and personalized learning paths for students.",
+    tech: ["React","Tailwind-Css", "Node.js","MySQL", "LLM APIs"],
+    link: "https://quantumedu.in",
+    github: "https://github.com/Akash-Sharma-9804",
+  },
+  {
+    id: "3",
+    title: "SwiftCart",
+    img: "/images/SwiftCart.png",
+    category: "Frontend / E-Commerce",
+    desc: "Modern e-commerce store with product filtering, cart management, and streamlined checkout flow.",
+    tech: ["React", "Tailwind CSS", "REST API"],
+    link: "https://swift-cart-flax.vercel.app/",
+    github: "https://github.com/Akash-Sharma-9804",
+  },
+  {
+    id: "4",
+    title: "WeatherApp",
+    img: "/images/Weatherapp.png",
+    category: "Frontend / Weather",
+    desc: "Real-time weather tracking application with location-based forecasts and interactive UI.",
+    tech: ["React", "OpenWeather API", "Tailwind CSS"],
+    link: "https://akash-sharma-9804.github.io/Weather-app",
+    github: "https://github.com/Akash-Sharma-9804",
+  },
+  {
+    id: "5",
+    title: "Netflix-Clone",
+    img: "/images/netflix.png",
+    category: "Full-Stack / Streaming",
+    desc: "Streaming platform clone with movie browsing, user authentication, watchlists, and responsive video-first UI.",
+    tech: ["React","Tailwind-Css", "Node.js","MongoDB", "JWT"],
+    link: "https://netflix-clone-three-chi-72.vercel.app",
+    github: "https://github.com/Akash-Sharma-9804",
+  },
+  {
+    id: "6",
+    title: "Fiverr-Clone",
+    img: "/images/fiverr.png",
+    category: "Frontend / Recruiting",
+    desc: "Frontend clone of a freelance recruiting marketplace featuring gig listings, seller profiles, service categories, and modern responsive UI.",
+    tech: ["React", "Tailwind CSS"],
+    link: "https://gorgeous-pithivier-3060a5.netlify.app",
+    github: "https://github.com/Akash-Sharma-9804",
+  },
+]

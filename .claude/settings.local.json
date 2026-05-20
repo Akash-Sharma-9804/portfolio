@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_ecc_playwright__browser_navigate",
+      "Bash(npm run *)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npm install *)",
+      "Bash(Select-Object Name)",
+      "Bash(npx vite *)",
+      "Bash(node *)",
+      "Bash(curl *)",
+      "mcp__ide__executeCode",
+      "Bash(python *)",
+      "Bash(pip install *)"
+    ]
+  }
+}

@@ -1,240 +1,108 @@
-import React from "react";
 import { motion } from "framer-motion";
+import { experiences } from "./config/data";
 
-const iconvariation = (duration) => ({
-  initial: { y: -10 },
-  animate: {
-    y: [10, -10],
-    transition: {
-      duration: duration,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "reverse",
-    },
-  },
-});
-
-const experiences = [
-  {
-    role: "Web-Designing",
-    company: " Hewlett-Packard HP",
-    duration: "2019 - 2020",
-    description: "Front-End Development using HTML,CSS, JAVASCRIPT..",
-  },
-  {
-    role: "B.Sc Computer Science ",
-    company: "Calcutta University",
-    duration: "2020 - 2023",
-    description: "",
-  },
-  {
-    role: "Web-Developer",
-    company: " Unified Mentor ",
-    duration: "2024 - 2024",
-    description: "1 month online internship for Frontend Development.",
-  },
-  {
-    role: "MERN STACK  Development",
-    company: "",
-    duration: "2024 - 2024",
-    description:
-      "I have learned the MERN stack, which includes MongoDB for database management, Express.js for backend frameworks, React for building dynamic user interfaces, and Node.js for server-side scripting. ",
-  },
-];
-
-const ExperienceSection = () => {
+export default function ExperienceSection() {
   return (
-    <section className="py-16  mx-10 " id="education">
-      <div className="container mx-auto">
-        <h2 className="text-center mt-5 text-4xl underline-offset-8 underline decoration-slate-600 bg-gradient-to-r from-zinc-500 to-sky-700 bg-clip-text text-transparent font-bold mb-12">
-          Education
-        </h2>
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 100 }}
-          transition={{ duration: 1.5 }}
-          className="text-center">
-          <span className="inline-block bg-gray-200 px-4 py-2 rounded-full text-gray-700 font-semibold text-sm">
-            WORK EXPERIENCE
-          </span>
-        </motion.div>
-
-        <div className="relative mt-12">
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-1 bg-slate-800 sm:bg-gray-300"></div>
-
-          <div className="space-y-16">
-            {experiences.map((experience, index) => (
-              <div
-                key={index}
-                className={`relative sm:flex items-center ${
-                  index % 2 === 0 ? "sm:flex-row-reverse" : "sm:flex-row"
-                }`}>
-                <div className="w-1/2"></div>
-
-                <motion.div
-                  whileInView={{ opacity: 1, y: 0 }}
-                  initial={{ opacity: 0, y: 50 }}
-                  transition={{ duration: 1.5 }}
-                  className="sm:w-1/3  text-center">
-                  <div className="p-6 mx-5 bg-[radial-gradient(circle_500px_at_50%_300px,#3e3e3e,#000)] sm:bg-[radial-gradient(circle_500px_at_50%_300px,#3e3e3e,transparent)] text-white shadow-lg rounded-lg">
-                    <h3 className="text-xl font-bold">{experience.role}</h3>
-                    <p className="text-gray-500">
-                      {experience.company} - {experience.duration}
-                    </p>
-                    <p className="text-zinc-100 mt-2">
-                      {experience.description}
-                    </p>
-                  </div>
-                </motion.div>
-
-                <div className="absolute -top-4 sm:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-500 w-6 sm:w-12 h-6 sm:h-12 rounded-full flex items-center justify-center">
-                  <div className="bg-white  w-3 sm:w-6 h-3 sm:h-6 rounded-full"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <motion.hr
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.5 }}
-          className="h-px w-2/3  mx-auto z-10 my-10 bg-gray-200 border-0  "
-        />
-      </div>
-      <div className="flex flex-col justify-center items-center ">
-        <motion.h1
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 100 }}
-          transition={{ duration: 1 }}
-          className="text-4xl p-2 my-10 bg-gradient-to-r from-zinc-500 to-sky-700 bg-clip-text text-transparent font-bold  ">
-          Technologies
-        </motion.h1>
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 100 }}
-          transition={{ duration: 1 }}
-          className="sm:flex  grid grid-flow-col gap-2 sm:gap-5 rounded-md bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)] p-5   sm:p-10">
-          <div className="relative group">
-            <motion.img
-              variants={iconvariation(3)}
-              initial="initial"
-              animate="animate"
-              className="h-10 w-10 cursor-pointer"
-              src="./images/html.png"
-              alt=""
-            />
-            <div className="absolute -top-6 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white p-1 text-xs font-semibold">HTML</p>
-            </div>
-          </div>
-          <div className="relative group">
-          <motion.img
-            variants={iconvariation(6)}
-            initial="initial"
-            animate="animate"
-            className="h-10 w-10 cursor-pointer"
-            src="./images/css.png"
-            alt=""
-          />
-           <div className="absolute -top-6 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white p-1 text-xs font-semibold">CSS</p>
-            </div>
-
-            </div>
-            <div className="relative group">
-          <motion.img
-            variants={iconvariation(3)}
-            initial="initial"
-            animate="animate"
-            className="h-10 w-10 cursor-pointer"
-            src="./images/nodejs.png"
-            alt=""
-          />
-           <div className="absolute -top-6 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white p-1 text-xs font-semibold">NODE Js.</p>
-            </div>
-
-            </div>
-            <div className="relative group">
-          <motion.img
-            variants={iconvariation(6)}
-            initial="initial"
-            animate="animate"
-            className="h-10 w-10 cursor-pointer"
-            src="./images/javascript.png"
-            alt=""
-          />
-           <div className="absolute -top-6 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white p-1 text-xs font-semibold">JavaScript</p>
-            </div>
-
-            </div>
-          <div className="relative group">
-          <motion.img
-            variants={iconvariation(3)}
-            initial="initial"
-            animate="animate"
-            className="h-10 w-10 cursor-pointer"
-            src="./images/python.png"
-            alt=""
-          />
-           <div className="absolute -top-6 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white p-1 text-xs font-semibold">Python</p>
-            </div>
-
-            </div>
-            <div className="relative group">
-          <motion.img
-            variants={iconvariation(6)}
-            initial="initial"
-            animate="animate"
-            className="h-10 w-10 cursor-pointer"
-            src="./images/react.png"
-            alt=""
-          />
-           <div className="absolute -top-6 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white p-1 text-xs font-semibold">React</p>
-            </div>
-
-            </div>
-            <div className="relative group">
-          <motion.img
-            variants={iconvariation(3)}
-            initial="initial"
-            animate="animate"
-            className="h-10 w-10 cursor-pointer"
-            src="./images/mongodb1.png"
-            alt=""
-          />
-           <div className="absolute -top-6 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white p-1 text-xs font-semibold">MongoDb</p>
-            </div>
-
-            </div>
-            <div className="relative group">
-          <motion.img
-            variants={iconvariation(6)}
-            initial="initial"
-            animate="animate"
-            className="h-10 w-10 cursor-pointer"
-            src="./images/github.png"
-            alt=""
-          />
-           <div className="absolute -top-6 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white p-1 text-xs font-semibold">Github</p>
-            </div>
-
-            </div>
-        </motion.div>
-      </div>
-      <motion.hr
+    <section id="experience" className="section-gap container-content relative">
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 50 }}
-        transition={{ duration: 0.5 }}
-        className="h-px w-2/3  mx-auto z-10 my-10 bg-gray-200 border-0  "
-      />
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="mb-20"
+      >
+        <span className="font-code text-primary text-sm uppercase tracking-widest mb-4 block">
+          02 // Deployment Logs
+        </span>
+        <h2 className="font-display text-headline-lg">Deployment Logs</h2>
+      </motion.div>
+
+      {/* Timeline */}
+      <div className="relative">
+        {/*
+          Mobile: line runs at left-[23px] (center of the 12px dot which sits at left-[17px], w-4=16px → center = 17+8=25px... adjusted to 23px)
+          Desktop: line runs at exactly 50% (md:left-1/2)
+          We use a wrapper that is relative, and the line is absolute within it.
+        */}
+        <div
+          className="absolute left-[23px] md:left-1/2 top-0 bottom-0 w-[2px] md:-translate-x-1/2"
+          style={{
+            background: "linear-gradient(to bottom, transparent 0%, var(--color-primary, #c9a96e) 8%, var(--color-primary, #c9a96e) 92%, transparent 100%)",
+            opacity: 0.5,
+          }}
+        />
+
+        <div className="space-y-20 md:space-y-28">
+          {experiences.map((exp, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="relative md:grid md:grid-cols-[1fr_32px_1fr] md:gap-x-8 items-center"
+              >
+                {/* Left side */}
+                <div className={`hidden md:flex ${isEven ? "justify-end pr-4" : "justify-start pl-4"}`}>
+                  {isEven ? (
+                    <span className="font-code text-xs text-primary/60 uppercase tracking-[0.2em]">
+                      {exp.duration}
+                    </span>
+                  ) : (
+                    <div className="glass-panel p-8 hover:border-primary/40 transition-colors max-w-md w-full">
+                      <h3 className="font-display text-headline-md mb-1">{exp.role}</h3>
+                      <p className="text-primary font-code text-xs mb-4 uppercase tracking-wider">{exp.company}</p>
+                      <ul className="font-code text-xs text-on-surface-variant space-y-3">
+                        {exp.bullets.map((bullet, i) => (
+                          <li key={i} className="flex gap-2">
+                            <span className="text-primary flex-shrink-0">▸</span>
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+                {/* Center dot — sits on the line */}
+                {/* Mobile: absolute, positioned to align with the left line at left-[23px] */}
+                {/* Desktop: in-flow center column, flex-centered */}
+                <div className="absolute left-[15px] top-1/2 -translate-y-1/2 md:static md:translate-y-0 md:flex md:justify-center md:items-center z-10">
+                  <div className="w-4 h-4 bg-primary ring-[6px] ring-primary/20 rounded-full shrink-0" />
+                </div>
+
+                {/* Right side */}
+                <div className={`pl-10 md:pl-0 ${isEven ? "md:flex md:justify-start md:pl-4" : "md:flex md:justify-end md:pr-4"}`}>
+                  {isEven ? (
+                    <div className="glass-panel p-8 hover:border-primary/40 transition-colors max-w-md w-full">
+                      <span className="md:hidden font-code text-[10px] text-primary/60 mb-4 block uppercase tracking-wider">
+                        {exp.duration}
+                      </span>
+                      <h3 className="font-display text-headline-md mb-1">{exp.role}</h3>
+                      <p className="text-primary font-code text-xs mb-4 uppercase tracking-wider">{exp.company}</p>
+                      <ul className="font-code text-xs text-on-surface-variant space-y-3">
+                        {exp.bullets.map((bullet, i) => (
+                          <li key={i} className="flex gap-2">
+                            <span className="text-primary flex-shrink-0">▸</span>
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    <span className="hidden md:inline font-code text-xs text-primary/60 uppercase tracking-[0.2em]">
+                      {exp.duration}
+                    </span>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
     </section>
   );
-};
-
-export default ExperienceSection;
+}

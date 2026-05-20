@@ -1,98 +1,122 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { projects } from "./config/data";
 
-const project = [
-  {
-    id: "1",
-    title: "Netflix-Clone",
-    img: "./images/netflix.png",
-    skill: " HTML, CSS , React,Node JS & Mongo DB",
-    link: "https://netflix-clone-three-chi-72.vercel.app",
-    desc: "A full MERN-stack Project. Created a Netflix-Clone using  HTML, CSS , React,Node JS & Mongo DB for the front-end and backends..",
-  },
-  {
-    id: "2",
-    title: "Fiverr-Clone",
-    img: "./images/fiverr.png",
-    skill: " HTML, CSS , React,Node JS & Mongo DB",
-    link: "https://gorgeous-pithivier-3060a5.netlify.app",
-    desc: "A full MERN-stack Project. Created a Fiverr-Clone using  HTML, CSS , React,Node JS & Mongo DB for the front-end and backends..",
-  },
-   {
-    id: "3",
-    title: "SwiftCart",
-    img: "./images/SwiftCart.png",
-    skill: " HTML, CSS , React",
-    link: "https://swift-cart-flax.vercel.app/",
-    desc: " Developed a E-commerse website with react and tailwind and used FakeStoreApi for database for products.",
-  },
-  {
-    id: "4",
-    title: "Quantum-Ai",
-    img: "./images/Quantum.PNG",
-    skill: "React, Tailwind css, Gemini Ai api",
-    link: "https://quantum-ai-weld.vercel.app/",
-    desc: " Developed a Chat-bot Ai using React, Tailwind css and Integrated Gemini Ai api   for real-time Ai response",
-  },
-  {
-    id: "5",
-    title: "Zomato-UI",
-    img: "./images/Zomato.png",
-    skill: " HTML, CSS , React",
-    link: "https://akash-sharma-9804.github.io/Zomato-clone-React/",
-    desc: "A full working Zomato UI clone. It includes features like a responsive homepage showcasing restaurants, restaurant details pages, dynamic filters. Built with React for the frontend.",
-  },
-  {
-    id: "6",
-    title: "Weather-App",
-    img: "./images/Wetherapp.png",
-    skill: " JavaScript, HTML, and CSS",
-    link: "https://akash-sharma-9804.github.io/Weather-app/",
-    desc: " Developed a web app to track global weather using JavaScript, HTML, and CSS Integrated Open Weather APIs for real-time weather data",
-  },
-];
-
-
-const openGithub = () => {
-  window.open("https://github.com/Akash-Sharma-9804", "_blank"); // Replace with your desired URL
-};
-const Projects = () => {
+export default function Projects() {
   return (
-    <div className="my-4 p-5 flex flex-col justify-center items-center" id="project">
-      <h1 className="text-4xl p-2 mt-16 border-slate-400 border-l-0 border-r-0 border-t-0 border-4 mb-10 bg-gradient-to-r from-zinc-500 to-sky-700 bg-clip-text text-transparent font-bold   ">
-        Projects
-      </h1>
-      <div className="sm:flex grid grid-flow-row flex-wrap gap-5 justify-center items-center ">
-        {project.map((items) => {
+    <section id="projects" className="section-gap container-content">
+
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6"
+      >
+        <div>
+          <span className="font-code text-primary text-sm uppercase tracking-widest mb-4 block">
+            03 // Selected Builds
+          </span>
+          <h2 className="font-display text-headline-lg">Selected Builds</h2>
+        </div>
+        <p className="font-code text-xs text-on-surface-variant max-w-[260px] leading-relaxed opacity-60">
+          End-to-end production apps — architecture through deployment.
+        </p>
+      </motion.div>
+
+      {/* Projects — alternating layout */}
+      <div className="space-y-32">
+        {projects.map((project, index) => {
+          const isEven = index % 2 === 0;
+          const num = String(index + 1).padStart(2, "0");
+
           return (
             <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 100 }}
-              transition={{ duration: 1 }}
-              key={items.id}
-              className="rounded-md bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)] text-white p-5 w-80  sm:w-[500px] ">
-              <div className="flex flex-col ">
-                <img
-                  className="h-72  w-full  rounded-lg"
-                  src={items.img}
-                  alt={items.title}
-                />
-                <div className="flex flex-col mt-2 gap-5">
-                  <span className="text-2xl font-bold text-center bg-gradient-to-r from-zinc-500 to-sky-700 bg-clip-text text-transparent">
-                    {items.title}
-                  </span>
-                  <span>Made using : {items.skill}</span>
-                  <span className="text-gray-500 text-justify">
-                    {items.desc}
-                  </span>
-                  {/* <Link to={items.link}> View Live Page</Link> */}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+              className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} gap-8 md:gap-14 items-center`}
+            >
+              {/* Screenshot — browser mockup frame */}
+              <div className="w-full md:w-[58%] shrink-0 group">
+                <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-black/60">
+                  {/* Fake browser bar */}
+                  <div className="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/8">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+                    <div className="ml-3 flex-1 bg-white/6 rounded-sm px-3 py-1 max-w-[220px]">
+                      <span className="font-code text-[10px] text-white/30 truncate block">
+                        {project.link.replace("https://", "")}
+                      </span>
+                    </div>
+                  </div>
+                  {/* Screenshot */}
+                  <div className="overflow-hidden aspect-[16/10]">
+                    <img
+                      src={project.img}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  {/* Subtle vignette at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+                </div>
+              </div>
+
+              {/* Text content */}
+              <div className="flex-1 min-w-0">
+                <span className="font-code text-[10px] text-white/25 uppercase tracking-[0.3em] mb-3 block">
+                  {num} / {projects.length.toString().padStart(2, "0")}
+                </span>
+
+                <span className="font-code text-xs text-primary uppercase tracking-[0.2em] mb-4 block">
+                  {project.category}
+                </span>
+
+                <h3 className="font-display text-4xl md:text-5xl leading-[1.05] mb-5">
+                  {project.title}
+                </h3>
+
+                <p className="font-code text-xs text-on-surface-variant leading-relaxed mb-8 opacity-75">
+                  {project.desc}
+                </p>
+
+                {/* Tech stack */}
+                <div className="flex flex-wrap gap-2 mb-10">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="font-code text-[10px] uppercase tracking-wider text-white/50 border border-white/12 px-3 py-1.5"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {/* CTA links */}
+                <div className="flex items-center gap-8">
                   <a
-                    className="p-2 text-center   hover:text-green-600 bg-slate-600 rounded-md font-bold"
-                    href={items.link} target="_blank"
-                    rel="noopener noreferrer">
-                      
-                    View Live Page
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/btn flex items-center gap-2 font-code text-xs text-primary uppercase tracking-widest
+                               border border-primary/40 px-5 py-3 hover:bg-primary/10 transition-colors duration-200"
+                  >
+                    View Live
+                    <ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-200" />
+                  </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 font-code text-xs text-white/40 uppercase tracking-widest hover:text-white/70 transition-colors"
+                  >
+                    Source Code
+                    <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
               </div>
@@ -100,37 +124,7 @@ const Projects = () => {
           );
         })}
       </div>
-      <motion.div
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 50 }}
-        transition={{ duration: 0.5 }}
-        className="flex items-center gap-5 my-10 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)] p-5 rounded-md">
-        <h1 className="text-xl font-bold text-slate-100">
-          Visit My Page :{" "}
-        </h1>
-        <div className="relative group">
 
-        <img
-          className="h-10 w-10 hover:scale-110 cursor-pointer"
-          src="./images/github.png"
-          alt=""
-          onClick={openGithub}
-          />
-        <div
-        className="absolute -top-10   p-2 w-full bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-        <p className="text-white text-xs   font-semibold">github.com/Akash-Sharma-9804</p>
-      </div>
-        </div>
-      </motion.div>
-      <motion.hr
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 50 }}
-        transition={{ duration: 0.5 }}
-        className="h-px w-2/3  mx-auto z-10 my-10 bg-gray-200 border-0  " 
-      />
-    </div>
+    </section>
   );
-};
-
-export default Projects;
+}

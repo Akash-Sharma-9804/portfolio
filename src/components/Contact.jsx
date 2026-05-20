@@ -1,7 +1,8 @@
-import React from "react";
-
 import { useState } from "react";
-const Contact = () => {
+import { motion } from "framer-motion";
+import { Mail, MapPin } from "lucide-react";
+
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,185 +20,146 @@ const Contact = () => {
     event.preventDefault();
     setIsSubmitting(true);
     setSuccessMessage("");
-    const formData = new FormData(event.target);
 
-    formData.append("access_key", "7c75a889-3493-46ba-82f1-a8b674c301a8");
+    const formDataObj = new FormData(event.target);
+    formDataObj.append("access_key", "7c75a889-3493-46ba-82f1-a8b674c301a8");
 
-    const object = Object.fromEntries(formData);
+    const object = Object.fromEntries(formDataObj);
     const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    }).then((res) => res.json());
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      }).then((res) => res.json());
 
-    if (res.success) {
-      console.log("Success", res);
-    }
-    setTimeout(() => {
+      if (res.success) {
+        setSuccessMessage("Message sent successfully! I'll get back to you soon.");
+        setFormData({ name: "", email: "", message: "" });
+      }
+    } catch (error) {
+      setSuccessMessage("Something went wrong. Please try again.");
+    } finally {
       setIsSubmitting(false);
-      setSuccessMessage("Thank you! Your message has been sent.");
-      setFormData({ name: "", email: "", message: "" });
-    }, 1500);
+    }
   };
 
   return (
-    <div
-      className="bg-cover bg-center   bg-repeat sm:h-screen  max-w-screen-2xl flex items-center justify-center"
-      id="contact">
-      <div className="backdrop-blur-3xl	mt-20 sm:mt-20 mb-5 rounded-lg shadow-lg w-4/5 md:w-2/3 lg:w-11/12   sm:flex">
-        {/* Left Section */}
-        <div className=" md:flex  flex-col justify-center  gap-5 p-8 rounded-l-lg text-white">
-          <h1 className="sm:text-5xl text-3xl mb-5 font-extrabold">
-            Let's build Great <span className="text-red-600"> apps</span>{" "}
-            Together.
-          </h1>
-          <p className="text-wrap w-3/4 text-lg text-slate-400 sm:text-xl">
-            I'am here to bring your concept to life , manage your ongoing
-            project , or expand your existing development team.
-          </p>
-          <h1 className="sm:text-3xl text-2xl my-5 font-bold">
-            Let's work together <span className="text-green-600"> today.</span>{" "}
-          </h1>
-          <span className="flex gap-5 text-xs sm:text-base items-center">
-            Email: akashsharma9804@gmail.com
-          </span>
-          <div className=" mt-10   p-5">
-            <div className="flex gap-2 sm:gap-10">
-              <h1 className="text-lg  sm:flex items-center "> Socials :</h1>
-                <div className="relative group">
-              <img
-                className="h-6 w-6 sm:h-10 sm:w-10 cursor-pointer  hover:scale-110  bg-slate-400 rounded-xl "
-                src="./images/github.png"
-                alt=""
-              />
-              <div
-        className="absolute -top-9 p-1 w-full bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    <section id="contact" className="section-gap container-content">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="glass-panel p-12 md:p-20 relative overflow-hidden"
       >
-        <p className="text-white text-xs   font-semibold">github.com/Akash-Sharma-9804</p>
-      </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+          {/* Left — Info */}
+          <div>
+            <span className="font-code text-primary text-sm uppercase tracking-widest mb-4 block">
+              04 // Transmission Portal
+            </span>
+
+            <h2 className="font-display text-headline-lg mb-8">
+              Let's build something<br />
+              <span className="text-primary italic">together.</span>
+            </h2>
+
+            <p className="font-body text-body-lg text-on-surface-variant mb-12">
+              Ready to initiate a new project or discuss architectural challenges?
+              I'm currently available for freelance work and full-time opportunities.
+            </p>
+
+            <div className="space-y-6">
+              <div className="flex items-center gap-4 group">
+                <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-primary transition-colors">
+                  <Mail className="w-4 h-4 text-primary" />
+                </div>
+                <span className="font-code text-sm">akashsharma9804@gmail.com</span>
               </div>
-              <div className="relative group">
-              <img
-                className="h-6 w-6 sm:h-10 sm:w-10 cursor-pointer  hover:scale-110  rounded-xl"
-                src="./images/linkdin.png"
-                alt=""
-              />
-              <div
-        className="absolute -top-9 p-1 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-      >
-        <p className="text-white text-xs   font-semibold">linkedin.com/in/akash-sharma-a9a971331</p>
-      </div>
 
-      </div>
-      <div className="relative group">
-              <img
-                className="h-6 w-6 sm:h-10 sm:w-10 cursor-pointer  hover:scale-110  rounded-xl "
-                src="./images/instagram.png"
-                alt=""
-              />
-              <div
-        className="absolute -top-6 p-1 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-      >
-        <p className="text-white text-xs   font-semibold">itz_akash_98</p>
-      </div>
-
-      </div>
-      <div className="relative group">
-              <img
-                className="h-6 w-6 sm:h-10 sm:w-10 cursor-pointer  hover:scale-110   rounded-xl"
-                src="./images/gmail.png"
-                alt=""
-              />
-              <div
-        className="absolute -top-6 p-1 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-      >
-        <p className="text-white text-xs   font-semibold">akashsharma9804@gmail.com</p>
-      </div>
-
-      </div>
+              <div className="flex items-center gap-4 group">
+                <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-primary transition-colors">
+                  <MapPin className="w-4 h-4 text-primary" />
+                </div>
+                <span className="font-code text-sm">New Delhi, India</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Right Section */}
-        <div className="w-full mb-5 sm:mb-0 sm:rounded-r-lg  rounded-b-lg sm:rounded-b-none bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)] md:w-1/2 p-8 flex flex-col justify-center">
-          <h2 className="text-center text-2xl mb-5 font-bold text-white">
-            Let's Connect.
-          </h2>
-          <form onSubmit={onSubmit} className="space-y-4 ">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-base  text-slate-100 font-medium">
-                Name
+          {/* Right — Form */}
+          <form onSubmit={onSubmit} className="space-y-8">
+            <div className="group">
+              <label className="font-code text-[10px] uppercase text-primary mb-2 block tracking-widest">
+                source_name
               </label>
               <input
                 type="text"
-                id="name"
                 name="name"
-                placeholder="Your Name..."
                 value={formData.name}
                 onChange={handleChange}
+                placeholder="IDENTITY_HERE"
                 required
-                className="w-full p-3 mt-1 text-white bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-surface-lowest border-0 border-b border-white/10 p-4 font-code text-sm focus:ring-0 focus:border-primary transition-colors placeholder:opacity-20 outline-none"
               />
             </div>
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-base text-slate-100 font-medium">
-                Email
+
+            <div className="group">
+              <label className="font-code text-[10px] uppercase text-primary mb-2 block tracking-widest">
+                source_email
               </label>
               <input
                 type="email"
-                id="email"
                 name="email"
-                placeholder="Your Email...."
                 value={formData.email}
                 onChange={handleChange}
+                placeholder="ENCRYPTED_ADR"
                 required
-                className="w-full p-3 mt-1 text-white bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-surface-lowest border-0 border-b border-white/10 p-4 font-code text-sm focus:ring-0 focus:border-primary transition-colors placeholder:opacity-20 outline-none"
               />
             </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-base text-slate-100 font-medium">
-                Message
+
+            <div className="group">
+              <label className="font-code text-[10px] uppercase text-primary mb-2 block tracking-widest">
+                payload_data
               </label>
               <textarea
-                id="message"
                 name="message"
-                placeholder="Your message...."
                 value={formData.message}
                 onChange={handleChange}
+                placeholder="TRANSMISSION_CONTENT"
                 required
-                className="w-full p-3 mt-1 text-white bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                rows="5"></textarea>
+                rows={4}
+                className="w-full bg-surface-lowest border-0 border-b border-white/10 p-4 font-code text-sm focus:ring-0 focus:border-primary transition-colors placeholder:opacity-20 resize-none outline-none"
+              />
             </div>
-            <button
+
+            <motion.button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full py-3 text-lg font-semibold text-center rounded-md transition ${
-                isSubmitting ? "bg-blue-400" : "bg-blue-600 hover:bg-blue-700"
-              }`}>
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </button>
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full bg-primary-container text-on-primary-container py-5 label-code hover:opacity-90 active:scale-[0.98] transition-all disabled:opacity-50"
+            >
+              {isSubmitting ? "Transmitting..." : "Send Message"}
+            </motion.button>
+
             {successMessage && (
-              <p className="mt-4 text-green-400 text-center">
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center text-sm font-medium text-primary py-2 font-code"
+              >
                 {successMessage}
-              </p>
+              </motion.p>
             )}
           </form>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
-};
-
-export default Contact;
+}
