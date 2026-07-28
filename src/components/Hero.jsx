@@ -178,12 +178,12 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center pt-20 container-content relative overflow-hidden"
+      className="min-h-screen flex items-center pt-20 px-6 md:px-12 lg:px-20 xl:px-28 relative overflow-hidden"
     >
       {/* Subtle glow */}
       <div className="absolute top-1/4 -right-20 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center w-full max-w-[1440px] mx-auto">
         {/* Left — Text */}
         <div className="max-w-xl">
           {/* Label */}
@@ -250,7 +250,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-10 left-0 flex items-center gap-4 opacity-30"
+        className="absolute bottom-10 left-6 md:left-12 lg:left-20 xl:left-28 flex items-center gap-4 opacity-30"
       >
         <span className="font-code text-xs uppercase tracking-[0.3em]">Scroll to inspect</span>
         <div className="w-px h-12 bg-on-surface-variant" />
